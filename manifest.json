@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Sudoku.com but a bit better",
+  "version": "1.0",
+  "description": "Adds shortcuts to Sudoku.com and removes slowdown",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://sudoku.com/*"
+      ],
+      "js": [
+        "sudokuEnhanced.js"
+      ]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "borderify@mozilla.org",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  }
+}

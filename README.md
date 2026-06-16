@@ -1,0 +1,1 @@
+# Sudoku Enhanced Browser Extension
