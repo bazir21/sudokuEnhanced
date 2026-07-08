@@ -1,0 +1,70 @@
+body.sudoku-dark {
+    --dark-bg: #1e1e1e;
+    --dark-surface: #2d2d2d;
+    --dark-cell: #2a2a2a;
+    --dark-cell-alt: #3a3a3a;
+    --dark-border: #4a4a4a;
+    --dark-hover: #555555;
+    --dark-text: #e0e0e0;
+    --dark-error: #e94560;
+    --dark-active: #77A2E4;
+}
+
+body.sudoku-dark {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.sudoku-dark .masthead,
+body.sudoku-dark header,
+body.sudoku-dark .header {
+    background-color: var(--dark-bg);
+}
+
+body.sudoku-dark .numpad,
+body.sudoku-dark .number-pad {
+    background-color: var(--dark-bg) !important;
+}
+
+body.sudoku-dark .numpad-item,
+body.sudoku-dark .number-pad-item,
+body.sudoku-dark .numpad-number {
+    background-color: var(--dark-cell-alt) !important;
+    color: var(--dark-text);
+}
+
+body.sudoku-dark .numpad-item:hover,
+body.sudoku-dark .number-pad-item:hover {
+    background-color: var(--dark-hover) !important;
+}
+
+body.sudoku-dark a,
+body.sudoku-dark button {
+    color: var(--dark-text);
+}
+
+body.sudoku-dark .header_mobile_dropdown a:not(.active):hover,
+body.sudoku-dark .header_menu > a:not(.active):hover {
+    background-color: var(--dark-hover) !important;
+}
+body.sudoku-dark .header_menu > a.active:not(.dc):not(.tournament):not(.postcards):not(.storybook) {
+    color: var(--dark-active) !important;
+}
+
+body.sudoku-dark .new-game-menu-button:hover,
+body.sudoku-dark .new-game-menu-mode-button:hover {
+    background-color: var(--dark-hover);
+}
+
+body.sudoku-dark .ref-start-game_items>a:hover {
+    background-color: var(--dark-hover);
+}
+
+body.sudoku-dark .ref-start-game_items>a.selected {
+    background-color: var(--dark-surface);
+}
+
+body.sudoku-dark .ref-start-game_items>a.active {
+    color: var(--dark-active);
+}
+

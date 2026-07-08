@@ -1,0 +1,101 @@
+"use strict";
+
+const DEFAULT_SHORTCUTS = {
+    toggleNote:  { key: "shift", label: "Toggle Note Mode" },
+    toggleDark:  { key: "d",     label: "Toggle Dark Mode" },
+    togglePause: { key: "p",     label: "Pause Timer" },
+    toggleUndo:  { key: "u",     label: "Undo Move" },
+    toggleHint:  { key: "h",     label: "Show Hint" },
+    toggleErase: { key: "e",     label: "Erase Cell" },
+    toggleClean: { key: "c",     label: "Clean UI" }
+};
+
+let currentShortcuts = {};
+let listeningAction = null;
+
+const tableBody = document.getElementById("shortcutTable");
+const conflictWarning = document.getElementById("conflictWarning");
+const resetBtn = document.getElementById("resetBtn");
+const saveBtn = document.getElementById("saveBtn");
+
+function renderTable() {
+    tableBody.innerHTML = "";
+    Object.keys(currentShortcuts).forEach(action => {
+        const { key, label } = currentShortcuts[action];
+        const tr = document.createElement("tr");
+
+        const tdLabel = document.createElement("td");
+        tdLabel.textContent = label;
+
+        const tdKey = document.createElement("td");
+        const badge = document.createElement("span");
+        badge.className = "key-badge";
+        badge.textContent = key;
+        tdKey.appendChild(badge);
+
+        const tdAction = document.createElement("td");
+        const btn = document.createElement("button");
+        btn.className = "change-btn";
+        btn.textContent = "Change";
+        btn.addEventListener("click", () => startListening(action, btn));
+        tdAction.appendChild(btn);
+
+        tr.appendChild(tdLabel);
+        tr.appendChild(tdKey);
+        tr.appendChild(tdAction);
+        tableBody.appendChild(tr);
+    });
+}
+
+function startListening(action, btn) {
+    if (listeningAction) return;
+    listeningAction = action;
+    btn.textContent = "Press a key...";
+    btn.classList.add("listening");
+
+    function handler(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const key = e.key.toLowerCase();
+
+        document.removeEventListener("keydown", handler, true);
+        btn.classList.remove("listening");
+        btn.textContent = "Change";
+        listeningAction = null;
+
+        const duplicate = Object.keys(currentShortcuts).find(
+            a => a !== action && currentShortcuts[a].key === key
+        );
+
+        if (duplicate) {
+            conflictWarning.style.display = "block";
+            conflictWarning.textContent = `Conflicts with "${currentShortcuts[duplicate].label}". Try another key.`;
+            return;
+        }
+
+        conflictWarning.style.display = "none";
+        currentShortcuts[action].key = key;
+        renderTable();
+    }
+
+    document.addEventListener("keydown", handler, true);
+}
+
+resetBtn.addEventListener("click", () => {
+    currentShortcuts = JSON.parse(JSON.stringify(DEFAULT_SHORTCUTS));
+    conflictWarning.style.display = "none";
+    renderTable();
+});
+
+saveBtn.addEventListener("click", () => {
+    browser.storage.local.set({ shortcuts: currentShortcuts }).then(() => {
+        saveBtn.textContent = "Saved!";
+        setTimeout(() => { saveBtn.textContent = "Save"; }, 1500);
+    });
+});
+
+browser.storage.local.get(["shortcuts"]).then(state => {
+    currentShortcuts = state.shortcuts || JSON.parse(JSON.stringify(DEFAULT_SHORTCUTS));
+    renderTable();
+});
