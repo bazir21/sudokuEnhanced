@@ -43,6 +43,15 @@ body.sudoku-dark button {
     color: var(--dark-text);
 }
 
+body.sudoku-dark .header_mobile_dropdown {
+    background-color: var(--dark-cell);
+}
+
+
+body.sudoku-dark .header_mobile_dropdown::after {
+    background-color: var(--dark-cell);
+}
+
 body.sudoku-dark .header_mobile_dropdown a:not(.active):hover,
 body.sudoku-dark .header_menu > a:not(.active):hover {
     background-color: var(--dark-hover) !important;
@@ -51,9 +60,46 @@ body.sudoku-dark .header_menu > a.active:not(.dc):not(.tournament):not(.postcard
     color: var(--dark-active) !important;
 }
 
+body.sudoku-dark .new-game-menu {
+    background-color: var(--dark-bg);
+    box-shadow: 0 5px 20px 0 1;
+}
+
+body.sudoku-dark .new-game-menu-header {
+    color: var(--dark-active);
+}
+
+body.sudoku-dark .new-game-menu-subheader {
+    color: var(--dark-text);
+}
+
+body.sudoku-dark .new-game-menu-mode-button {
+    background: var(--dark-cell-alt);
+    color: var(--dark-text);
+    border: 1px solid var(--dark-border);
+}
+
+body.sudoku-dark .new-game-menu-button {
+    border-top: 1px solid var(--dark-cell-alt);
+    color: var(--dark-text);
+}
+
 body.sudoku-dark .new-game-menu-button:hover,
 body.sudoku-dark .new-game-menu-mode-button:hover {
     background-color: var(--dark-hover);
+}
+
+body.sudoku-dark .new-game-menu-button.active {
+    color: var(--dark-active);
+}
+
+body.sudoku-dark .new-game-menu-mode-button.active {
+    background: var(--dark-cell);
+    color: var(--dark-active);
+}
+
+body.sudoku-dark .new-game-menu-difficulty-block {
+    background: var(--dark-surface);
 }
 
 body.sudoku-dark .ref-start-game_items>a:hover {
@@ -67,4 +113,5 @@ body.sudoku-dark .ref-start-game_items>a.selected {
 body.sudoku-dark .ref-start-game_items>a.active {
     color: var(--dark-active);
 }
+
 

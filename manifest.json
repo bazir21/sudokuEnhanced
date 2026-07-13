@@ -1,21 +1,33 @@
 {
   "manifest_version": 3,
   "name": "Sudoku.com but a bit better",
-  "version": "1.0",
+  "version": "2.0",
   "description": "Adds shortcuts to Sudoku.com and removes slowdown",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
   "content_scripts": [
     {
       "matches": [
         "https://sudoku.com/*"
       ],
+      "css": [
+        "darkMode.css"
+      ],
       "js": [
         "sudokuEnhanced.js"
-      ]
+      ],
+      "run_at": "document_idle"
     }
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "borderify@mozilla.org",
+      "id": "sudoku-enhanced@mozilla.org",
       "data_collection_permissions": {
         "required": [
           "none"

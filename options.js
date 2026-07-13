@@ -2,12 +2,12 @@
 
 const DEFAULT_SHORTCUTS = {
     toggleNote:  { key: "shift", label: "Toggle Note Mode" },
-    toggleDark:  { key: "d",     label: "Toggle Dark Mode" },
+//  toggleDark:  { key: "d",     label: "Toggle Dark Mode" },
     togglePause: { key: "p",     label: "Pause Timer" },
     toggleUndo:  { key: "u",     label: "Undo Move" },
     toggleHint:  { key: "h",     label: "Show Hint" },
     toggleErase: { key: "e",     label: "Erase Cell" },
-    toggleClean: { key: "c",     label: "Clean UI" }
+//  toggleClean: { key: "c",     label: "Clean UI" }
 };
 
 let currentShortcuts = {};
