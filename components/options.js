@@ -2,12 +2,10 @@
 
 const DEFAULT_SHORTCUTS = {
     toggleNote:  { key: "shift", label: "Toggle Note Mode" },
-//  toggleDark:  { key: "d",     label: "Toggle Dark Mode" },
     togglePause: { key: "p",     label: "Pause Timer" },
     toggleUndo:  { key: "u",     label: "Undo Move" },
     toggleHint:  { key: "h",     label: "Show Hint" },
     toggleErase: { key: "e",     label: "Erase Cell" },
-//  toggleClean: { key: "c",     label: "Clean UI" }
 };
 
 let currentShortcuts = {};
@@ -29,13 +27,13 @@ function renderTable() {
 
         const tdKey = document.createElement("td");
         const badge = document.createElement("span");
-        badge.className = "key-badge";
+        badge.className = "shortcut-key-display";
         badge.textContent = key;
         tdKey.appendChild(badge);
 
         const tdAction = document.createElement("td");
         const btn = document.createElement("button");
-        btn.className = "change-btn";
+        btn.className = "shortcut-rebind-button";
         btn.textContent = "Change";
         btn.addEventListener("click", () => startListening(action, btn));
         tdAction.appendChild(btn);
@@ -51,7 +49,7 @@ function startListening(action, btn) {
     if (listeningAction) return;
     listeningAction = action;
     btn.textContent = "Press a key...";
-    btn.classList.add("listening");
+    btn.classList.add("shortcut-rebind-active");
 
     function handler(e) {
         e.preventDefault();
@@ -60,7 +58,7 @@ function startListening(action, btn) {
         const key = e.key.toLowerCase();
 
         document.removeEventListener("keydown", handler, true);
-        btn.classList.remove("listening");
+        btn.classList.remove("shortcut-rebind-active");
         btn.textContent = "Change";
         listeningAction = null;
 

@@ -1,0 +1,108 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: #333;
+}
+
+h1 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.options-description {
+    color: #666;
+    margin-bottom: 24px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.shortcut-key-display {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 13px;
+    min-width: 32px;
+    text-align: center;
+}
+
+.shortcut-rebind-button {
+    padding: 4px 12px;
+    border: 1px solid #533483;
+    background: white;
+    color: #533483;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.shortcut-rebind-button:hover {
+    background: #533483;
+    color: white;
+}
+
+.shortcut-rebind-button.shortcut-rebind-active {
+    background: #e94560;
+    border-color: #e94560;
+    color: white;
+}
+
+.options-button-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.options-reset-button {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.options-reset-button:hover {
+    background: #f5f5f5;
+}
+
+.options-save-button {
+    padding: 8px 16px;
+    border: none;
+    background: #533483;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.options-save-button:hover {
+    background: #6a42a0;
+}
+
+.options-conflict-message {
+    color: #e94560;
+    font-size: 12px;
+    margin-top: 12px;
+    display: none;
+}
+

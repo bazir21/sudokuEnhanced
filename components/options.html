@@ -3,104 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>Sudoku Enhanced - Shortcuts</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 0 20px;
-            color: #333;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
-        p.subtitle {
-            color: #666;
-            margin-bottom: 24px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            text-align: left;
-            padding: 10px 12px;
-            border-bottom: 1px solid #eee;
-        }
-        th {
-            font-size: 12px;
-            text-transform: uppercase;
-            color: #888;
-        }
-        .key-badge {
-            display: inline-block;
-            padding: 2px 8px;
-            background: #f0f0f0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 13px;
-            min-width: 32px;
-            text-align: center;
-        }
-        .change-btn {
-            padding: 4px 12px;
-            border: 1px solid #533483;
-            background: white;
-            color: #533483;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 12px;
-        }
-        .change-btn:hover {
-            background: #533483;
-            color: white;
-        }
-        .change-btn.listening {
-            background: #e94560;
-            border-color: #e94560;
-            color: white;
-        }
-        .actions {
-            margin-top: 20px;
-            display: flex;
-            gap: 10px;
-        }
-        .reset-btn {
-            padding: 8px 16px;
-            border: 1px solid #ccc;
-            background: white;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 13px;
-        }
-        .reset-btn:hover {
-            background: #f5f5f5;
-        }
-        .save-btn {
-            padding: 8px 16px;
-            border: none;
-            background: #533483;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 13px;
-        }
-        .save-btn:hover {
-            background: #6a42a0;
-        }
-        .conflict-warning {
-            color: #e94560;
-            font-size: 12px;
-            margin-top: 12px;
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="options.css">
 </head>
 <body>
     <h1>Keyboard Shortcuts</h1>
-    <p class="subtitle">Click "Change" then press a key to rebind. Changes apply after saving.</p>
+    <p class="options-description">Click "Change" then press a key to rebind. Changes apply after saving.</p>
     <table>
         <thead>
             <tr>
@@ -111,10 +18,10 @@
         </thead>
         <tbody id="shortcutTable"></tbody>
     </table>
-    <div class="conflict-warning" id="conflictWarning">This key is already assigned to another action.</div>
-    <div class="actions">
-        <button class="reset-btn" id="resetBtn">Reset to Defaults</button>
-        <button class="save-btn" id="saveBtn">Save</button>
+    <div class="options-conflict-message" id="conflictWarning">This key is already assigned to another action.</div>
+    <div class="options-button-group">
+        <button class="options-reset-button" id="resetBtn">Reset to Defaults</button>
+        <button class="options-save-button" id="saveBtn">Save</button>
     </div>
     <script src="options.js"></script>
 </body>
