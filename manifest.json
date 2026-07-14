@@ -5,10 +5,10 @@
   "description": "Adds shortcuts to Sudoku.com and removes slowdown",
   "permissions": ["storage"],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "components/popup.html"
   },
   "options_ui": {
-    "page": "options.html",
+    "page": "components/options.html",
     "open_in_tab": true
   },
   "content_scripts": [
