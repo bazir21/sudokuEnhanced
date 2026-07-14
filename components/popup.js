@@ -21,3 +21,22 @@ openOptions.addEventListener("click", (e) => {
     e.preventDefault();
     browser.runtime.openOptionsPage();
 });
+
+function initState(state) {
+    if (state.darkMode) document.body.classList.add("sudoku-dark");
+}
+
+browser.storage.onChanged.addListener((changes) => {
+    if (changes.darkMode) {
+        if (changes.darkMode.newValue) {
+            document.body.classList.add("sudoku-dark");
+        } else {
+            document.body.classList.remove("sudoku-dark");
+        }
+    }
+});
+
+browser.storage.local.get(["darkMode"]).then(state => {
+    initState(state);
+});
+

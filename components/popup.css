@@ -1,32 +1,40 @@
+@import "dark-theme-variables.css";
+
 body {
     width: 260px;
     padding: 12px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     margin: 0;
 }
+
 h3 {
     margin: 0 0 12px 0;
     font-size: 14px;
 }
+
 .popup-setting-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 6px 0;
 }
+
 .popup-setting-row label {
     font-size: 13px;
 }
+
 .popup-toggle-switch {
     position: relative;
     width: 36px;
     height: 20px;
 }
+
 .popup-toggle-switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
+
 .popup-toggle-slider {
     position: absolute;
     cursor: pointer;
@@ -35,6 +43,7 @@ h3 {
     border-radius: 20px;
     transition: 0.2s;
 }
+
 .popup-toggle-slider:before {
     content: "";
     position: absolute;
@@ -46,12 +55,15 @@ h3 {
     border-radius: 50%;
     transition: 0.2s;
 }
+
 input:checked + .popup-toggle-slider {
     background-color: #533483;
 }
+
 input:checked + .popup-toggle-slider:before {
     transform: translateX(16px);
 }
+
 .popup-options-button {
     display: block;
     text-align: center;
@@ -64,6 +76,35 @@ input:checked + .popup-toggle-slider:before {
     font-size: 13px;
     cursor: pointer;
 }
+
 .popup-options-button:hover {
     background-color: #6a42a0;
 }
+
+/* DARK MODE */
+
+body.sudoku-dark {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.sudoku-dark h3 {
+    color: var(--dark-text);
+}
+
+body.sudoku-dark .popup-toggle-slider {
+    background-color: var(--dark-cell-alt);
+}
+
+body.sudoku-dark input:checked + .popup-toggle-slider {
+    background-color: var(--dark-active);
+}
+
+body.sudoku-dark .popup-options-button {
+    background: var(--dark-active);
+}
+
+body.sudoku-dark .popup-options-button:hover {
+    background-color: var(--dark-hover);
+}
+

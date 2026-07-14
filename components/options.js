@@ -80,6 +80,10 @@ function startListening(action, btn) {
     document.addEventListener("keydown", handler, true);
 }
 
+function initState(state) {
+    if (state.darkMode) document.body.classList.add("sudoku-dark");
+}
+
 resetBtn.addEventListener("click", () => {
     currentShortcuts = JSON.parse(JSON.stringify(DEFAULT_SHORTCUTS));
     conflictWarning.style.display = "none";
@@ -93,7 +97,18 @@ saveBtn.addEventListener("click", () => {
     });
 });
 
-browser.storage.local.get(["shortcuts"]).then(state => {
+browser.storage.onChanged.addListener((changes) => {
+    if (changes.darkMode) {
+        if (changes.darkMode.newValue) {
+            document.body.classList.add("sudoku-dark");
+        } else {
+            document.body.classList.remove("sudoku-dark");
+        }
+    }
+});
+
+browser.storage.local.get(["shortcuts", "darkMode"]).then(state => {
     currentShortcuts = state.shortcuts || JSON.parse(JSON.stringify(DEFAULT_SHORTCUTS));
     renderTable();
+    initState(state);
 });
