@@ -1,16 +1,14 @@
 {
   "manifest_version": 3,
   "name": "Sudoku.com but a bit better",
-  "version": "2.0",
-  "description": "Adds shortcuts to Sudoku.com and removes slowdown",
+  "version": "1.0.0",
+  "description": "Adds keyboard shortcuts, a dark mode, and cleanup to Sudoku.com",
   "permissions": ["storage"],
   "action": {
-    "default_popup": "components/popup.html",
-    "css": "components.css"
+    "default_popup": "components/popup.html"
   },
   "options_ui": {
     "page": "components/options.html",
-    "css": "components/options.css",
     "open_in_tab": true
   },
   "content_scripts": [
@@ -29,7 +27,7 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "sudoku-enhanced@mozilla.org",
+      "id": "sudoku-enhanced@bazir.dev",
       "data_collection_permissions": {
         "required": [
           "none"
