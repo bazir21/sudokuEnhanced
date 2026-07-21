@@ -28,6 +28,26 @@ body.sudoku-dark .number-pad-item:hover {
     background-color: var(--dark-hover) !important;
 }
 
+body.sudoku-dark .game_statistics .timer-wrapper .timer {
+    color: var(--dark-text);
+}
+
+body.sudoku-dark .game_statistics_label {
+    color: var(--dark-text);
+}
+
+body.sudoku-dark .game_statistics .mistakes-counter > span {
+    color: var(--dark-text);
+}
+
+body.sudoku-dark .game_statistics .score {
+    color: var(--dark-text);
+}
+
+body.sudoku-dark .game_statistics_goal_value {
+    color: var(--dark-text);
+}
+
 body.sudoku-dark a,
 body.sudoku-dark button {
     color: var(--dark-text);
