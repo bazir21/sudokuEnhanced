@@ -1,4 +1,4 @@
-@import "components/dark-theme-variables.css";
+@import "components/darkModeVars.css";
 
 body.sudoku-dark {
     background-color: var(--dark-bg);
