@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Sudoku.com but a bit better",
+  "name": "Sudoku.com Enhancer",
   "version": "1.0.0",
   "description": "Adds keyboard shortcuts, a dark mode, and cleanup to Sudoku.com",
   "permissions": ["storage"],
