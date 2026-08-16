@@ -1,18 +1,12 @@
 "use strict";
 
-const DEFAULT_SHORTCUTS = {
-    toggleNote:  { key: "shift", label: "Toggle Note Mode" },
-    togglePause: { key: "p",     label: "Pause Timer" },
-    toggleUndo:  { key: "u",     label: "Undo Move" },
-    toggleHint:  { key: "h",     label: "Show Hint" },
-};
-
 const SELECTORS = {
-    note:  ".game-controls-item.game-controls-pencil",
-    pause: ".timer-wrapper",
-    undo:  ".game-controls-undo",
-    hint:  ".game-controls-hint",
-    erase: ".game-controls-erase"
+    note: 	".game-controls-item.game-controls-pencil",
+    pause:	".timer-wrapper",
+    undo: 	".game-controls-undo",
+    hint: 	".game-controls-hint",
+    erase:	".game-controls-erase",
+    continue:   "button.game-over_btn.mistakesSecondChance",
 };
 
 const CLEAN_SELECTORS = ["#aside", "#cookies-banner", "#tips-articles-wrap"];
@@ -60,6 +54,12 @@ function toggleErase() {
     return safeDispatch(SELECTORS.erase, "mousedown");
 }
 
+function pressContinue() {
+    if (document.querySelector(".show-mistakes-popup") !== null) {
+        return safeClick(SELECTORS.continue);
+    }
+}
+
 function applyClean() {
     CLEAN_SELECTORS.forEach(sel => {
         const el = document.querySelector(sel);
@@ -94,11 +94,12 @@ function buildKeyMap(shortcuts) {
 }
 
 const ACTION_MAP = {
-    toggleNote:  toggleNoteMode,
-    togglePause: togglePause,
-    toggleUndo:  toggleUndo,
-    toggleHint:  toggleHint,
-    toggleErase: toggleErase,
+    toggleNote: 	toggleNoteMode,
+    togglePause:	togglePause,
+    toggleUndo: 	toggleUndo,
+    toggleHint: 	toggleHint,
+    toggleErase:	toggleErase,
+    continueGame:       pressContinue,
 };
 
 function keyPressed(p) {
