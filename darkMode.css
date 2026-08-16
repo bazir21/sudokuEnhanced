@@ -57,7 +57,6 @@ body.sudoku-dark .header_mobile_dropdown {
     background-color: var(--dark-cell);
 }
 
-
 body.sudoku-dark .header_mobile_dropdown::after {
     background-color: var(--dark-cell);
 }
@@ -124,4 +123,19 @@ body.sudoku-dark .ref-start-game_items>a.active {
     color: var(--dark-active);
 }
 
+body.sudoku-dark .game-over_body {
+    background-color: var(--dark-bg);
+}
+
+body.sudoku-dark .game-over_title {
+    color: var(--dark-text);
+}
+
+body.sudoku-dark .game-over_desc {
+    color: var(--dark-text);
+}
+
+body.sudoku-dark .game-over_close:hover {
+    color: var(--dark-active);
+}
 
