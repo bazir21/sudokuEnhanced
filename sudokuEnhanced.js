@@ -24,18 +24,17 @@ function safeClick(selector) {
 function safeDispatch(selector, eventType) {
     const el = document.querySelector(selector);
     if (!el) return false;
-    el.dispatchEvent(new Event(eventType));
+    el.dispatchEvent(new MouseEvent(eventType, { 
+        bubbles: true,
+        cancelable: true,
+        view: window
+    }));
+
     return true;
 }
 
 function toggleNoteMode() {
     return safeDispatch(SELECTORS.note, "mousedown");
-}
-
-function toggleDark() {
-    document.body.classList.toggle("sudoku-dark");
-    const isDark = document.body.classList.contains("sudoku-dark");
-    browser.storage.local.set({ darkMode: isDark });
 }
 
 function togglePause() {
@@ -73,16 +72,6 @@ function applyClean() {
 function removeClean() {
     hiddenElements.forEach(el => { el.style.display = ""; });
     hiddenElements = [];
-}
-
-function toggleCleaner() {
-    if (hiddenElements.length > 0) {
-        removeClean();
-        browser.storage.local.set({ cleanMode: false });
-    } else {
-        applyClean();
-        browser.storage.local.set({ cleanMode: true });
-    }
 }
 
 function buildKeyMap(shortcuts) {
@@ -127,7 +116,7 @@ function initState(state) {
 browser.storage.local.get(["darkMode", "cleanMode", "shortcuts"]).then(state => {
     initState(state);
     document.addEventListener("keydown", keyPressed);
-});
+}).catch(error => console.error("Storage error:", error));
 
 browser.storage.onChanged.addListener((changes, area) => {
     if (area !== "local") return;

@@ -7,14 +7,16 @@ const openOptions = document.getElementById("openOptions");
 browser.storage.local.get(["darkMode", "cleanMode"]).then(state => {
     darkToggle.checked = !!state.darkMode;
     cleanToggle.checked = !!state.cleanMode;
-});
+}).catch(error => console.error("Storage error:", error));
 
 darkToggle.addEventListener("change", () => {
-    browser.storage.local.set({ darkMode: darkToggle.checked });
+    browser.storage.local.set({ darkMode: darkToggle.checked })
+        .catch(error => console.error("Storage error:", error));
 });
 
 cleanToggle.addEventListener("change", () => {
-    browser.storage.local.set({ cleanMode: cleanToggle.checked });
+    browser.storage.local.set({ cleanMode: cleanToggle.checked })
+        .catch(error => console.error("Storage error:", error));
 });
 
 openOptions.addEventListener("click", (e) => {
@@ -38,5 +40,5 @@ browser.storage.onChanged.addListener((changes) => {
 
 browser.storage.local.get(["darkMode"]).then(state => {
     initState(state);
-});
+}).catch(error => console.error("Storage error:", error));
 

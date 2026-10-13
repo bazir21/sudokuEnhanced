@@ -71,7 +71,7 @@ body.sudoku-dark .header_menu > a.active:not(.dc):not(.tournament):not(.postcard
 
 body.sudoku-dark .new-game-menu {
     background-color: var(--dark-bg);
-    box-shadow: 0 5px 20px 0 1;
+    box-shadow: var(--dark-cell) 0 5px 20px;
 }
 
 body.sudoku-dark .new-game-menu-header {

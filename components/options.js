@@ -86,7 +86,7 @@ saveBtn.addEventListener("click", () => {
     browser.storage.local.set({ shortcuts: currentShortcuts }).then(() => {
         saveBtn.textContent = "Saved!";
         setTimeout(() => { saveBtn.textContent = "Save"; }, 1500);
-    });
+    }).catch(error => console.error("Storage error:", error));
 });
 
 browser.storage.onChanged.addListener((changes) => {
@@ -103,4 +103,4 @@ browser.storage.local.get(["shortcuts", "darkMode"]).then(state => {
     currentShortcuts = state.shortcuts || JSON.parse(JSON.stringify(DEFAULT_SHORTCUTS));
     renderTable();
     initState(state);
-});
+}).catch(error => console.error("Storage error:", error));
