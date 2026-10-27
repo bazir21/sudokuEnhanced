@@ -1,4 +1,4 @@
-# Sudoku.com Enhanced Browser Extension
+# BetterSudoku
 
 Keyboard shortcuts, dark mode, and clutter removal for [Sudoku.com](https://www.sudoku.com). Settings are stored locally in your browser.
 

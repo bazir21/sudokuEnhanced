@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Sudoku.com Enhancer",
+  "name": "BetterSudoku",
   "version": "1.1.0",
-  "description": "Adds keyboard shortcuts, a dark mode, and cleanup to Sudoku.com",
+  "description": "Keyboard shortcuts, dark mode, and a cleaner UI for Sudoku.com",
   "permissions": ["storage"],
   "icons": {
     "48": "assets/icon-48.png",
@@ -38,7 +38,7 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "sudoku-enhanced@bazir.dev",
+      "id": "better-sudoku@bazir.dev",
       "strict_min_version": "109.0",
       "data_collection_permissions": {
         "required": [
