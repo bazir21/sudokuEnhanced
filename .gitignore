@@ -2,6 +2,9 @@
 .mimocode/
 AGENTS.md
 
+# web-ext
+/web-ext-artifacts
+
 # OS files
 .DS_Store
 Thumbs.db
