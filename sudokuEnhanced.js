@@ -9,10 +9,7 @@ const SELECTORS = {
     continue:   "button.game-over_btn.mistakesSecondChance",
 };
 
-const CLEAN_SELECTORS = ["#aside", "#cookies-banner", "#tips-articles-wrap"];
-
 let shortcutMap = {};
-let hiddenElements = [];
 
 function safeClick(selector) {
     const el = document.querySelector(selector);
@@ -59,19 +56,8 @@ function pressContinue() {
     }
 }
 
-function applyClean() {
-    CLEAN_SELECTORS.forEach(sel => {
-        const el = document.querySelector(sel);
-        if (el) {
-            el.style.display = "none";
-            hiddenElements.push(el);
-        }
-    });
-}
-
-function removeClean() {
-    hiddenElements.forEach(el => { el.style.display = ""; });
-    hiddenElements = [];
+function applyCleanState(isCleanEnabled) {
+    document.body.classList.toggle("sudoku-clean", isCleanEnabled);
 }
 
 function buildKeyMap(shortcuts) {
@@ -108,7 +94,7 @@ function initState(state) {
         document.body.classList.add("sudoku-dark");
     }
     if (state.cleanMode) {
-        applyClean();
+        applyCleanState(true);
     }
     shortcutMap = buildKeyMap(state.shortcuts || DEFAULT_SHORTCUTS);
 }
@@ -128,11 +114,7 @@ browser.storage.onChanged.addListener((changes, area) => {
         }
     }
     if (changes.cleanMode) {
-        if (changes.cleanMode.newValue) {
-            if (hiddenElements.length === 0) applyClean();
-        } else {
-            removeClean();
-        }
+        applyCleanState(!!changes.cleanMode.newValue);
     }
     if (changes.shortcuts) {
         shortcutMap = buildKeyMap(changes.shortcuts.newValue || DEFAULT_SHORTCUTS);
