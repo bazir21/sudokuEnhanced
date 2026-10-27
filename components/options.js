@@ -54,9 +54,7 @@ function startListening(action, btn) {
         btn.textContent = "Change";
         listeningAction = null;
 
-        const duplicate = Object.keys(currentShortcuts).find(
-            a => a !== action && currentShortcuts[a].key === key
-        );
+        const duplicate = findConflictingAction(currentShortcuts, action, key);
 
         if (duplicate) {
             conflictWarning.style.display = "block";

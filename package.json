@@ -1,0 +1,12 @@
+{
+  "name": "sudoku-com-enhancer",
+  "private": true,
+  "scripts": {
+    "test": "vitest run",
+    "lint": "web-ext lint"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4",
+    "web-ext": "^8.9.0"
+  }
+}

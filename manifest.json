@@ -30,6 +30,7 @@
       ],
       "js": [
         "constants.js",
+        "shortcutHelpers.js",
         "sudokuEnhanced.js"
       ],
       "run_at": "document_idle"

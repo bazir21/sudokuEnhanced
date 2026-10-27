@@ -60,14 +60,6 @@ function applyCleanState(isCleanEnabled) {
     document.body.classList.toggle("sudoku-clean", isCleanEnabled);
 }
 
-function buildKeyMap(shortcuts) {
-    const map = {};
-    Object.keys(shortcuts).forEach(action => {
-        map[shortcuts[action].key] = action;
-    });
-    return map;
-}
-
 const ACTION_MAP = {
     toggleNote: 	toggleNoteMode,
     togglePause:	togglePause,

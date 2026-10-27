@@ -13,6 +13,9 @@ Thumbs.db
 *.swo
 *~
 
+# Node (dev tooling only — tests + web-ext lint)
+node_modules/
+
 # Firefox extension build artifacts
 *.xpi
 *.zip
