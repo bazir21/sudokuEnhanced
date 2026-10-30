@@ -2,6 +2,8 @@
 
 Keyboard shortcuts, dark mode, and clutter removal for [Sudoku.com](https://www.sudoku.com). Settings are stored locally in your browser.
 
+This extension can be added to Firefox [here](https://addons.mozilla.org/en-GB/firefox/addon/bettersudoku/)
+
 ## Features
 
 - **Rebindable keyboard shortcuts** for common game actions
@@ -21,13 +23,6 @@ Keyboard shortcuts, dark mode, and clutter removal for [Sudoku.com](https://www.
 | `r` | Continue game (after a mistake) |
 
 You are able to rebind these at any time via **Customize Shortcuts** in the popup.
-
-## Install (temporary, for development)
-
-1. Open `about:debugging` in Firefox
-2. **This Firefox** → **Load Temporary Add-on…**
-3. Select `manifest.json` from this folder
-4. Open [sudoku.com](https://www.sudoku.com) and try the shortcuts
 
 ## Privacy
 
