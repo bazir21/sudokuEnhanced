@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
   "name": "BetterSudoku",
-  "version": "1.1.0",
+  "version": "1.1.1",
+  "minimum_chrome_version": "148",
   "description": "Keyboard shortcuts, dark mode, and a cleaner UI for Sudoku.com",
   "permissions": ["storage"],
   "icons": {
@@ -26,7 +27,8 @@
         "https://sudoku.com/*"
       ],
       "css": [
-        "darkMode.css"
+        "darkMode.css",
+        "components/darkModeVars.css"
       ],
       "js": [
         "constants.js",
