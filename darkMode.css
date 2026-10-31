@@ -1,5 +1,3 @@
-@import "components/darkModeVars.css";
-
 body.sudoku-dark {
     background-color: var(--dark-bg);
     color: var(--dark-text);
@@ -137,6 +135,43 @@ body.sudoku-dark .game-over_desc {
 
 body.sudoku-dark .game-over_close:hover {
     color: var(--dark-active);
+}
+
+body.sudoku-dark .game_settings_body {
+    background: var(--dark-bg);
+}
+
+body.sudoku-dark .game_settings_header_title {
+    color: var(--dark-text);
+}
+
+body.sudoku-dark .game_settings_content_item {
+    background-color: var(--dark-surface);
+}
+
+body.sudoku-dark .game_settings_content_item_title {
+    color: var(--dark-text);
+}
+
+body.sudoku-dark .game_settings_toggle::before {
+    color: var(--dark-active);
+}
+
+body.sudoku-dark .tc-content {
+    background: var(--dark-bg);
+}
+
+body.sudoku-dark .tc-content a[href] {
+    color: var(--dark-text);
+}
+
+body.sudoku-dark .tc-btn-secondary  {
+    background: var(--dark-surface);
+}
+
+body.sudoku-dark .tc-btn-secondary:hover  {
+    background: var(--dark-hover);
+    color: var(--dark-text);
 }
 
 body.sudoku-clean #aside,
