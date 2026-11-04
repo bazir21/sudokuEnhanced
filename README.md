@@ -2,7 +2,7 @@
 
 Keyboard shortcuts, dark mode, and clutter removal for [Sudoku.com](https://www.sudoku.com). Settings are stored locally in your browser.
 
-This extension can be added to Firefox [here](https://addons.mozilla.org/en-GB/firefox/addon/bettersudoku/)
+This extension is live on both [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/bettersudoku/) and [Chrome](https://chromewebstore.google.com/detail/bettersudoku/dokbhlnaeoacbjjhmcocakmncalamllj?authuser=0&hl=en-GB)
 
 ## Features
 
